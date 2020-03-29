@@ -1,12 +1,10 @@
 # Author: Alex Liu
 # Last modified: 2020-03-29
-# Description: This script finds the the probility that one can get 2 red and 1 black balls from 3 draws from 3 urns 
+# Description: This script finds the probility that one can get 2 red and 1 black balls from 3 draws from 3 urns 
 
 # Setup -------------------------------------------------------------------
 
 remove(list = ls())
-
-setwd("/Users/ahtlau/Library/Mobile Documents/com~apple~CloudDocs/Data/HackerRank - 10 Days of Statistics/Day 2 Basic Probability")
 
 library(reshape2)
 library(MASS)
@@ -29,8 +27,7 @@ n_favourable <- n_all %>%
         filter(str_detect(flag, "R{2}|R.R"))
 
 # Calculate probability
-(nrow(n_favourable)/nrow(n_all) %>% 
-                fractions())
+fractions(nrow(n_favourable)/nrow(n_all))
 
 # Method 2 (more verbose) ----------------------------------------------------------------
 
